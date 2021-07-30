@@ -14,6 +14,7 @@ function Destination() {
     excursionFullName: '',
   });
 
+  // Calling fetchDataCategory function on page load...
   React.useEffect(() => {
     fetchDataCategory(countryName, destination)
       .then((results) => {
@@ -22,7 +23,7 @@ function Destination() {
       .catch((error) => alert('No Response from the Server'));
   }, [countryName, destination]);
 
-  // Handling first letter to uppercase
+  // Handling first letter of search word to uppercase...
   function titleCase(str) {
     var splitStr = str.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
@@ -32,6 +33,7 @@ function Destination() {
     return splitStr.join(' ');
   }
 
+  // Function handling the value of category input in component state...
   const handleChangeCategory = (e) => {
     e.preventDefault();
     setInput({
@@ -39,6 +41,8 @@ function Destination() {
       category: titleCase(e.target.value),
     });
   };
+
+  // Function handling the value of sub-category input in component state...
   const handleChangeSubCategory = (e) => {
     e.preventDefault();
     setInput({
@@ -46,6 +50,8 @@ function Destination() {
       subCategory: titleCase(e.target.value),
     });
   };
+
+  // Function handling the value of excursion-full-name input in component state...
   const handleChangeExcursionFullName = (e) => {
     e.preventDefault();
     setInput({
@@ -54,6 +60,7 @@ function Destination() {
     });
   };
 
+  // Function handling submit search request...
   const handleSubmit = () => {
     let newCategoryArr = [];
     if (

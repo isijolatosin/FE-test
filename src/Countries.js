@@ -11,6 +11,7 @@ function Countries({ countriesInfo }) {
       setIsLoading(false);
     }
   }, [countriesInfo]);
+
   return (
     <div className='bg-blue-100 pt-5 pb-5 max-w-screen-2xl mx-auto mt-10'>
       <h1 className='text-blue-500 font-semibold ml-5 mb-5'>
